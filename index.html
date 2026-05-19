@@ -1,39 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<!-- ============================================================
+     TUFFYEN.COM — HOMEPAGE
+     ============================================================
+
+     HOW TO EDIT THIS FILE
+     ---------------------
+     This is a single self-contained HTML file. All styles are
+     embedded at the top, content is at the bottom.
+
+     COMMON EDITS (jump to these comment markers):
+
+       [EDIT-META]      Site title, description, social preview
+       [EDIT-NAV]       Top menu links
+       [EDIT-HERO]      Headline, tagline, credentials, buttons
+       [EDIT-BIO]       Tuff's bio paragraphs
+       [EDIT-STATS]     The four big numbers
+       [EDIT-CITIES]    Add or remove city cards (Milton, Atlanta, etc)
+       [EDIT-CONTACT]   The "bring a seminar" CTA + email
+       [EDIT-FOOTER]    Copyright, disclaimer
+
+     PATHS
+     -----
+     All internal links use RELATIVE paths (e.g. "miltonangelgroup/").
+     This means the same file works on every host:
+       - https://ejmrrr.github.io/tuffyen-site/
+       - https://tuffyen.com/
+     No need to update links when you switch domains.
+
+     ADDING A NEW CITY
+     -----------------
+     1. Create a folder in the repo: /[cityname]/
+     2. Put an index.html inside it
+     3. Find [EDIT-CITIES] below and copy the Milton card,
+        change name + link to "[cityname]/"
+     ============================================================ -->
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- [EDIT-META] Site metadata =============================== -->
 <title>Tuff Yen | Career Venture Capitalist</title>
-<meta name="description" content="Tuff Yen is a career venture capitalist and founder of Seraph Group, with over $200 million invested across 180+ technology startups. Learn from one of the most experienced angel investors in the country.">
+<meta name="description" content="Tuff Yen is a career venture capitalist and founder of Seraph Group, with over $200 million invested across 180+ technology startups.">
+<meta property="og:title" content="Tuff Yen | Career Venture Capitalist">
+<meta property="og:description" content="Learn how professional investors build wealth in technology startups.">
+<meta property="og:type" content="website">
+
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
+/* ============================================================
+   DESIGN TOKENS
+   To rebrand colors or fonts, change these and everything updates.
+   ============================================================ */
 :root {
-  --navy-deep: #0a1428;
-  --navy: #0e1a3a;
-  --navy-soft: #14224a;
-  --cream: #f5efe2;
+  --navy-deep:  #0a1428;
+  --navy:       #0e1a3a;
+  --navy-soft:  #14224a;
+  --cream:      #f5efe2;
   --cream-soft: #ece5d4;
-  --gold: #c9a961;
-  --gold-bright: #d9bb6f;
-  --gold-dim: #8b7642;
+  --gold:       #c9a961;
+  --gold-bright:#d9bb6f;
+  --gold-dim:   #8b7642;
   --white-text: #f7f3ea;
-  --muted: #a8a294;
-  --rule: rgba(201, 169, 97, 0.35);
+  --muted:      #a8a294;
+  --rule:       rgba(201, 169, 97, 0.35);
 
   --font-serif: 'Cormorant Garamond', 'Liberation Serif', Georgia, serif;
-  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans:  'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --max-width:  1100px;
+  --gutter:     2rem;
 }
 
+/* ============================================================
+   GLOBAL RESET + BASE
+   ============================================================ */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
 
 body {
   background: var(--navy-deep);
-  background-image:
-    radial-gradient(ellipse at top, var(--navy-soft) 0%, var(--navy-deep) 55%, #060d1c 100%);
+  background-image: radial-gradient(ellipse at top, var(--navy-soft) 0%, var(--navy-deep) 55%, #060d1c 100%);
   background-attachment: fixed;
   color: var(--cream);
   font-family: var(--font-sans);
@@ -46,11 +99,11 @@ body {
   position: relative;
 }
 
-/* Subtle film grain for depth */
+/* Subtle film-grain texture overlay */
 body::before {
   content: '';
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.95 0 0 0 0 0.92 0 0 0 0 0.85 0 0 0 0.12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   opacity: 0.5;
   mix-blend-mode: overlay;
@@ -61,7 +114,11 @@ body::before {
 a { color: var(--gold-bright); text-decoration: none; transition: color 0.2s ease; }
 a:hover { color: var(--cream); }
 
-/* ============ NAV ============ */
+img { max-width: 100%; height: auto; display: block; }
+
+/* ============================================================
+   NAV
+   ============================================================ */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -72,16 +129,14 @@ nav {
   border-bottom: 1px solid rgba(245, 239, 226, 0.06);
   padding: 1.1rem 0;
 }
-
 .nav-inner {
-  max-width: 1180px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--gutter);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .brand {
   font-family: var(--font-serif);
   font-size: 1.35rem;
@@ -90,15 +145,12 @@ nav {
   color: var(--cream);
   text-transform: uppercase;
 }
-
 .brand:hover { color: var(--gold-bright); }
-
 .nav-links {
   display: flex;
   gap: 2.5rem;
   list-style: none;
 }
-
 .nav-links a {
   font-family: var(--font-sans);
   font-size: 0.78rem;
@@ -107,7 +159,6 @@ nav {
   text-transform: uppercase;
   color: var(--cream-soft);
 }
-
 .nav-links a:hover { color: var(--gold-bright); }
 
 @media (max-width: 768px) {
@@ -116,32 +167,21 @@ nav {
   .brand { font-size: 1.1rem; }
   .nav-inner { padding: 0 1.25rem; }
 }
-
 @media (max-width: 540px) {
   .nav-links li:nth-child(3) { display: none; }
 }
 
-/* ============ HERO ============ */
+/* ============================================================
+   HERO
+   ============================================================ */
 .hero {
   position: relative;
   z-index: 2;
-  padding: 11rem 2rem 7rem;
+  padding: 11rem var(--gutter) 7rem;
   text-align: center;
-  max-width: 1100px;
+  max-width: var(--max-width);
   margin: 0 auto;
 }
-
-.eyebrow {
-  font-family: var(--font-sans);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.32em;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 2rem;
-  display: inline-block;
-}
-
 .eyebrow-line {
   display: flex;
   align-items: center;
@@ -149,7 +189,6 @@ nav {
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
-
 .eyebrow-line::before,
 .eyebrow-line::after {
   content: '';
@@ -157,7 +196,14 @@ nav {
   height: 1px;
   background: var(--gold);
 }
-
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
 .hero h1 {
   font-family: var(--font-serif);
   font-weight: 600;
@@ -167,19 +213,15 @@ nav {
   color: var(--cream);
   margin-bottom: 1.8rem;
 }
-
 .hero h1 .accent {
   display: block;
-  font-style: italic;
   font-weight: 500;
   color: var(--gold-bright);
   font-size: 0.42em;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-top: 1.2rem;
-  font-style: normal;
 }
-
 .hero-tagline {
   font-family: var(--font-serif);
   font-size: clamp(1.25rem, 2.6vw, 1.7rem);
@@ -190,7 +232,6 @@ nav {
   margin: 0 auto 2.5rem;
   line-height: 1.5;
 }
-
 .hero-credentials {
   font-family: var(--font-sans);
   font-size: 0.95rem;
@@ -199,19 +240,20 @@ nav {
   color: var(--gold);
   margin-bottom: 3.5rem;
 }
-
 .hero-credentials .divider {
   margin: 0 0.8rem;
   color: var(--gold-dim);
 }
 
+/* ============================================================
+   BUTTONS
+   ============================================================ */
 .cta-group {
   display: flex;
   gap: 1.25rem;
   justify-content: center;
   flex-wrap: wrap;
 }
-
 .cta {
   display: inline-block;
   padding: 1.1rem 2.4rem;
@@ -226,34 +268,15 @@ nav {
   transition: all 0.25s ease;
   cursor: pointer;
 }
+.cta:hover { background: var(--gold); color: var(--navy-deep); }
+.cta.primary { background: var(--gold); color: var(--navy-deep); }
+.cta.primary:hover { background: var(--gold-bright); color: var(--navy-deep); }
 
-.cta:hover {
-  background: var(--gold);
-  color: var(--navy-deep);
-}
-
-.cta.primary {
-  background: var(--gold);
-  color: var(--navy-deep);
-}
-
-.cta.primary:hover {
-  background: var(--gold-bright);
-  color: var(--navy-deep);
-}
-
-/* ============ SECTIONS ============ */
-section {
-  position: relative;
-  z-index: 2;
-  padding: 6rem 2rem;
-}
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+section { position: relative; z-index: 2; padding: 6rem var(--gutter); }
+.container { max-width: var(--max-width); margin: 0 auto; }
 .section-kicker {
   font-family: var(--font-sans);
   font-size: 0.78rem;
@@ -266,7 +289,6 @@ section {
   align-items: center;
   gap: 1rem;
 }
-
 .section-kicker::after {
   content: '';
   flex: 1;
@@ -274,44 +296,35 @@ section {
   background: var(--rule);
   max-width: 200px;
 }
-
 .section-title {
   font-family: var(--font-serif);
   font-weight: 500;
   font-size: clamp(2.2rem, 5vw, 3.4rem);
   line-height: 1.1;
-  letter-spacing: 0.005em;
   color: var(--cream);
   margin-bottom: 2.5rem;
   max-width: 820px;
 }
-
 .section-title em {
   font-style: italic;
   color: var(--gold-bright);
   font-weight: 400;
 }
 
-/* ============ ABOUT ============ */
-.about {
-  border-top: 1px solid var(--rule);
-}
-
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about { border-top: 1px solid var(--rule); }
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
   gap: 5rem;
   align-items: start;
 }
-
 @media (max-width: 860px) {
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
 }
-
-.about-image-wrap {
-  position: relative;
-}
-
+.about-image-wrap { position: relative; }
 .about-image-wrap::before {
   content: '';
   position: absolute;
@@ -322,7 +335,6 @@ section {
   border: 1px solid var(--gold);
   z-index: 0;
 }
-
 .about-image {
   position: relative;
   z-index: 1;
@@ -339,14 +351,12 @@ section {
   font-size: 0.95rem;
   overflow: hidden;
 }
-
 .about-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: brightness(0.92) contrast(1.05);
 }
-
 .about-body p {
   font-size: 1.08rem;
   line-height: 1.85;
@@ -354,7 +364,6 @@ section {
   margin-bottom: 1.4rem;
   font-weight: 300;
 }
-
 .about-body p:first-of-type {
   font-family: var(--font-serif);
   font-size: 1.4rem;
@@ -364,7 +373,6 @@ section {
   line-height: 1.5;
   margin-bottom: 2rem;
 }
-
 .linkedin-link {
   display: inline-flex;
   align-items: center;
@@ -380,29 +388,24 @@ section {
   padding-bottom: 0.4rem;
   transition: all 0.2s ease;
 }
-
 .linkedin-link:hover {
   color: var(--gold-bright);
   border-bottom-color: var(--gold-bright);
 }
 
-/* ============ STATS ============ */
-.stats {
-  border-top: 1px solid var(--rule);
-  background: rgba(20, 34, 74, 0.25);
-}
-
+/* ============================================================
+   STATS
+   ============================================================ */
+.stats { border-top: 1px solid var(--rule); background: rgba(20, 34, 74, 0.25); }
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   text-align: center;
 }
-
 @media (max-width: 760px) {
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 3rem 2rem; }
 }
-
 .stat-number {
   font-family: var(--font-serif);
   font-size: clamp(2.8rem, 6vw, 4.2rem);
@@ -410,9 +413,7 @@ section {
   color: var(--gold-bright);
   line-height: 1;
   margin-bottom: 0.7rem;
-  letter-spacing: 0.01em;
 }
-
 .stat-label {
   font-family: var(--font-sans);
   font-size: 0.72rem;
@@ -422,18 +423,24 @@ section {
   color: var(--cream-soft);
 }
 
-/* ============ LOCATIONS ============ */
-.locations {
-  border-top: 1px solid var(--rule);
+/* ============================================================
+   LOCATIONS (city cards)
+   ============================================================ */
+.locations { border-top: 1px solid var(--rule); }
+.locations-intro {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--cream-soft);
+  max-width: 680px;
+  line-height: 1.6;
 }
-
 .locations-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
-
 .location-card {
   background: rgba(20, 34, 74, 0.45);
   border: 1px solid var(--rule);
@@ -441,8 +448,9 @@ section {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  display: block;
+  text-decoration: none;
 }
-
 .location-card::before {
   content: '';
   position: absolute;
@@ -453,7 +461,6 @@ section {
   border-top: 1px solid var(--gold);
   border-left: 1px solid var(--gold);
 }
-
 .location-card::after {
   content: '';
   position: absolute;
@@ -464,17 +471,12 @@ section {
   border-bottom: 1px solid var(--gold);
   border-right: 1px solid var(--gold);
 }
-
 .location-card:hover {
   background: rgba(20, 34, 74, 0.7);
   transform: translateY(-3px);
 }
-
-.location-card.placeholder {
-  opacity: 0.55;
-  background: rgba(20, 34, 74, 0.2);
-}
-
+.location-card.placeholder { opacity: 0.55; background: rgba(20, 34, 74, 0.2); cursor: default; }
+.location-card.placeholder:hover { transform: none; }
 .location-status {
   font-family: var(--font-sans);
   font-size: 0.7rem;
@@ -484,16 +486,13 @@ section {
   color: var(--gold);
   margin-bottom: 1rem;
 }
-
 .location-name {
   font-family: var(--font-serif);
   font-size: 2rem;
   font-weight: 600;
   color: var(--cream);
   margin-bottom: 0.8rem;
-  letter-spacing: 0.01em;
 }
-
 .location-meta {
   font-family: var(--font-sans);
   font-size: 0.95rem;
@@ -502,7 +501,6 @@ section {
   font-weight: 300;
   line-height: 1.6;
 }
-
 .location-link {
   font-family: var(--font-sans);
   font-size: 0.78rem;
@@ -514,30 +512,26 @@ section {
   align-items: center;
   gap: 0.6rem;
 }
-
 .location-link::after {
   content: '→';
   font-size: 1rem;
   transition: transform 0.2s ease;
 }
+.location-card:hover .location-link::after { transform: translateX(4px); }
 
-.location-link:hover::after {
-  transform: translateX(4px);
-}
-
-/* ============ CTA SECTION ============ */
+/* ============================================================
+   CTA SECTION (bottom)
+   ============================================================ */
 .cta-section {
   border-top: 1px solid var(--rule);
   text-align: center;
-  padding: 7rem 2rem;
+  padding: 7rem var(--gutter);
 }
-
 .cta-section .section-title {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
-
 .cta-section p {
   font-family: var(--font-serif);
   font-style: italic;
@@ -547,18 +541,25 @@ section {
   margin: 0 auto 3rem;
   line-height: 1.6;
 }
+.cta-section .section-kicker {
+  justify-content: center;
+  max-width: 580px;
+  margin: 0 auto 1.5rem;
+}
+.cta-section .section-kicker::after { display: none; }
 
-/* ============ FOOTER ============ */
+/* ============================================================
+   FOOTER
+   ============================================================ */
 footer {
   position: relative;
   z-index: 2;
   border-top: 1px solid var(--rule);
-  padding: 3.5rem 2rem 2.5rem;
+  padding: 3.5rem var(--gutter) 2.5rem;
   background: rgba(6, 13, 28, 0.6);
 }
-
 .footer-inner {
-  max-width: 1100px;
+  max-width: var(--max-width);
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -566,7 +567,6 @@ footer {
   flex-wrap: wrap;
   gap: 2rem;
 }
-
 .footer-brand {
   font-family: var(--font-serif);
   font-size: 1.2rem;
@@ -576,14 +576,12 @@ footer {
   text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
-
 .footer-tag {
   font-family: var(--font-sans);
   font-size: 0.85rem;
   color: var(--muted);
   font-weight: 300;
 }
-
 .footer-disclaimer {
   font-family: var(--font-sans);
   font-size: 0.72rem;
@@ -592,9 +590,8 @@ footer {
   max-width: 480px;
   font-weight: 300;
 }
-
 .footer-bottom {
-  max-width: 1100px;
+  max-width: var(--max-width);
   margin: 2.5rem auto 0;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(168, 162, 148, 0.15);
@@ -605,36 +602,32 @@ footer {
   letter-spacing: 0.05em;
 }
 
-/* ============ ENTRANCE ANIMATIONS ============ */
+/* ============================================================
+   ENTRANCE ANIMATIONS
+   ============================================================ */
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-
-.hero > * {
-  opacity: 0;
-  animation: fadeUp 0.9s ease forwards;
-}
-
-.hero .eyebrow-line { animation-delay: 0.1s; }
-.hero h1 { animation-delay: 0.25s; }
-.hero .hero-tagline { animation-delay: 0.45s; }
-.hero .hero-credentials { animation-delay: 0.6s; }
-.hero .cta-group { animation-delay: 0.75s; }
-
+.hero > * { opacity: 0; animation: fadeUp 0.9s ease forwards; }
+.hero .eyebrow-line   { animation-delay: 0.10s; }
+.hero h1              { animation-delay: 0.25s; }
+.hero .hero-tagline   { animation-delay: 0.45s; }
+.hero .hero-credentials { animation-delay: 0.60s; }
+.hero .cta-group      { animation-delay: 0.75s; }
 </style>
 </head>
+
 <body>
 
+<!-- =====================================================
+     [EDIT-NAV] Top navigation
+     - "brand" is the top-left wordmark (links to home)
+     - Each <li> is one menu item
+     ===================================================== -->
 <nav>
   <div class="nav-inner">
-    <a href="/" class="brand">Tuff Yen</a>
+    <a href="./" class="brand">Tuff Yen</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#locations">Locations</a></li>
@@ -644,34 +637,58 @@ footer {
   </div>
 </nav>
 
-<!-- ============ HERO ============ -->
+
+<!-- =====================================================
+     [EDIT-HERO] Hero section
+     - h1 = the big "Tuff Yen" headline
+     - .accent = small caps line underneath
+     - .hero-tagline = italic tagline below
+     - .hero-credentials = single-line credentials strip
+     - Buttons link to in-page anchors (#locations, #about)
+     ===================================================== -->
 <header class="hero">
   <div class="eyebrow-line">
     <span class="eyebrow">Founder &amp; CEO, Seraph Group</span>
   </div>
+
   <h1>
     Tuff Yen
     <span class="accent">A Career in Venture Capital</span>
   </h1>
+
   <p class="hero-tagline">
     Teaching successful individuals how professional investors create wealth through ownership of private enterprises.
   </p>
+
   <div class="hero-credentials">
-    Yale MBA <span class="divider">|</span> Former VC at JPMorgan and Hambrecht &amp; Quist <span class="divider">|</span> $200M+ Invested Across 180+ Startups
+    Yale MBA
+    <span class="divider">|</span>
+    Former VC at JPMorgan and Hambrecht &amp; Quist
+    <span class="divider">|</span>
+    $200M+ Invested Across 180+ Startups
   </div>
+
   <div class="cta-group">
     <a href="#locations" class="cta primary">Upcoming Seminars</a>
     <a href="#about" class="cta">About Tuff</a>
   </div>
 </header>
 
-<!-- ============ ABOUT ============ -->
+
+<!-- =====================================================
+     [EDIT-BIO] About section
+     - The portrait image lives at "tuff.jpg" in the same
+       folder as this file. Replace that file to swap photos.
+     - First <p> renders as italic serif pull-quote.
+     - Following <p>s are body paragraphs.
+     ===================================================== -->
 <section class="about" id="about">
   <div class="container">
     <div class="section-kicker">About <span style="margin-left:0.5rem">/</span> Background</div>
     <h2 class="section-title">A career building <em>real wealth</em> through technology investing</h2>
 
     <div class="about-grid">
+
       <div class="about-image-wrap">
         <div class="about-image">
           <img src="tuff.jpg" alt="Tuff Yen, Founder of Seraph Group" onerror="this.style.display='none'; this.parentElement.innerHTML='Portrait';">
@@ -691,78 +708,121 @@ footer {
           View LinkedIn Profile
         </a>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ============ STATS ============ -->
+
+<!-- =====================================================
+     [EDIT-STATS] Four big numbers
+     - Change the .stat-number and .stat-label text only.
+     ===================================================== -->
 <section class="stats">
   <div class="container">
     <div class="stats-grid">
+
       <div>
         <div class="stat-number">$200M+</div>
         <div class="stat-label">Capital Deployed</div>
       </div>
+
       <div>
         <div class="stat-number">180+</div>
         <div class="stat-label">Companies Backed</div>
       </div>
+
       <div>
         <div class="stat-number">400+</div>
         <div class="stat-label">Investor Network</div>
       </div>
+
       <div>
         <div class="stat-number">120+</div>
         <div class="stat-label">Cities Reached</div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ============ LOCATIONS ============ -->
+
+<!-- =====================================================
+     [EDIT-CITIES] City cards
+     - To add a new city:
+       1. Make a folder in the repo (e.g. /atlanta/)
+       2. Put an index.html inside it
+       3. Copy a card block below, change "miltonangelgroup/"
+          to "atlanta/" and update the name + meta text
+     - To remove the "Coming Soon" placeholder, delete its
+       <div class="location-card placeholder">...</div> block.
+     ===================================================== -->
 <section class="locations" id="locations">
   <div class="container">
     <div class="section-kicker">Seminars <span style="margin-left:0.5rem">/</span> By City</div>
     <h2 class="section-title">Private angel groups <em>forming nationwide</em></h2>
-    <p style="font-family:var(--font-serif); font-style:italic; font-size:1.2rem; color:var(--cream-soft); max-width:680px; line-height:1.6;">
+    <p class="locations-intro">
       Each city hosts a private group of accomplished individuals learning how to invest successfully in early-stage technology companies. Sessions are free and educational. No solicitation, no products.
     </p>
 
     <div class="locations-grid">
 
-      <a href="https://miltonangelgroup.com" class="location-card" style="text-decoration:none;">
+      <!-- Milton Angel Group card.
+           Link uses a relative path: works on github.io AND tuffyen.com. -->
+      <a href="miltonangelgroup/" class="location-card">
         <div class="location-status">Now Forming</div>
         <div class="location-name">Milton Angel Group</div>
-        <div class="location-meta">Milton, Georgia<br>Free introductory seminar &mdash; Summer 2026</div>
+        <div class="location-meta">
+          Milton, Georgia<br>
+          Free introductory seminar &mdash; Summer 2026
+        </div>
         <span class="location-link">View Details</span>
       </a>
 
+      <!-- Placeholder card. Duplicate the Milton card above and update fields when a new city launches. -->
       <div class="location-card placeholder">
         <div class="location-status">Coming Soon</div>
         <div class="location-name">Additional Cities</div>
-        <div class="location-meta">New groups forming across the Southeast and beyond.<br>Get notified when one launches near you.</div>
+        <div class="location-meta">
+          New groups forming across the Southeast and beyond.<br>
+          Get notified when one launches near you.
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ============ CTA ============ -->
+
+<!-- =====================================================
+     [EDIT-CONTACT] Bottom CTA
+     - The mailto link is the address that receives
+       "bring a seminar to your city" inquiries.
+     - Change "miltonangelgroup/#interest" to point to a
+       different in-city form if needed.
+     ===================================================== -->
 <section class="cta-section" id="join">
   <div class="container">
-    <div class="section-kicker" style="justify-content:center; max-width:580px; margin-left:auto; margin-right:auto;">
+    <div class="section-kicker">
       <span style="flex:0">Get Involved</span>
     </div>
-    <h2 class="section-title">Learn directly from one of the most experienced <em>angel investors</em> in the country</h2>
+    <h2 class="section-title">
+      Learn directly from one of the most experienced <em>angel investors</em> in the country
+    </h2>
     <p>Free, educational sessions for individuals interested in private market investing. No fund, no products, no sales pitch.</p>
     <div class="cta-group">
-      <a href="https://miltonangelgroup.com#interest" class="cta primary">Join the Milton Group</a>
+      <a href="miltonangelgroup/#interest" class="cta primary">Join the Milton Group</a>
       <a href="mailto:info@tuffyen.com" class="cta">Bring a Seminar to Your City</a>
     </div>
   </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
+
+<!-- =====================================================
+     [EDIT-FOOTER] Footer
+     - Disclaimer text required to stay (legal/compliance)
+     - Update the copyright year as needed
+     ===================================================== -->
 <footer>
   <div class="footer-inner">
     <div>
