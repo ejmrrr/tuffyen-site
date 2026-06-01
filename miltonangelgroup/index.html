@@ -242,6 +242,44 @@ body {
 
 .nav-links a:hover { color: var(--gold); }
 
+/* External / parent-site button in main nav */
+.nav-tuffyen {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid rgba(201, 169, 97, 0.5);
+  margin-left: 1.8rem;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.nav-tuffyen:hover {
+  background: var(--gold);
+  color: var(--navy);
+  border-color: var(--gold);
+}
+
+.nav-tuffyen .nav-tuffyen-arrow {
+  font-size: 0.85rem;
+  transition: transform 0.25s ease;
+}
+
+.nav-tuffyen:hover .nav-tuffyen-arrow {
+  transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+  .nav-tuffyen { display: none; }
+}
+
 /* ===== PARENT BRAND RIBBON ===== */
 .parent-ribbon {
   position: fixed;
@@ -1088,6 +1126,7 @@ body {
     <a href="#why">What You'll Learn</a>
     <a href="#leadership">Leadership</a>
     <a href="#interest">Join the Group</a>
+    <a href="../" class="nav-tuffyen">tuffyen.com<span class="nav-tuffyen-arrow">&rarr;</span></a>
   </div>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
     <span></span><span></span><span></span>
@@ -1267,6 +1306,7 @@ body {
     <div class="gold-rule"></div>
     <div class="section-body">
       <p>If you are interested in learning how to invest in technology startups from a career venture capitalist, fill out the form below. We'll confirm your place at the June 22 seminar and keep you informed about future sessions.</p>
+      <p style="margin-top:1rem; font-size:0.95rem; color:var(--text-muted);">Prefer to reach out directly? Email us at <a href="mailto:info@tuffyen.com" style="color:var(--gold); text-decoration:none; font-weight:500;">info@tuffyen.com</a>.</p>
     </div>
 
     <div class="form-container">
@@ -1311,7 +1351,7 @@ body {
 <footer class="footer">
   <p class="footer-parent">Milton Angel Group is part of Tuff Yen's national seminar series. &nbsp;<a href="../">Visit tuffyen.com &rarr;</a></p>
   <div class="footer-logo">Milton Angel Group</div>
-  <a href="mailto:info@miltonangelgroup.com" class="footer-email">info@miltonangelgroup.com</a>
+  <a href="mailto:info@tuffyen.com" class="footer-email">info@tuffyen.com</a>
   <p class="footer-disclaimer">For educational purposes only. This is not a solicitation to invest in any fund or security. No investment advice is being provided. All investments involve risk, including the potential loss of principal.<br><br>This program content is neither sponsored, nor endorsed, nor approved by the Fulton County Library System or Fulton County Government.</p>
 </footer>
 
