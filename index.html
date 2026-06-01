@@ -549,6 +549,87 @@ section { position: relative; z-index: 2; padding: 6rem var(--gutter); }
 .cta-section .section-kicker::after { display: none; }
 
 /* ============================================================
+   CONTACT SECTION
+   ============================================================ */
+.contact-section {
+  border-top: 1px solid var(--rule);
+  padding: 6rem var(--gutter);
+  text-align: center;
+  background: rgba(20, 34, 74, 0.18);
+}
+.contact-section .section-kicker {
+  justify-content: center;
+  max-width: 580px;
+  margin: 0 auto 1.5rem;
+}
+.contact-section .section-kicker::after { display: none; }
+.contact-section h2 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  line-height: 1.15;
+  color: var(--cream);
+  margin-bottom: 1.2rem;
+}
+.contact-section p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--cream-soft);
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+.contact-email-display {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.25rem 2.4rem;
+  background: rgba(10, 20, 40, 0.55);
+  border: 1px solid var(--gold);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  transition: all 0.25s ease;
+  margin-bottom: 0.5rem;
+}
+.contact-email-display:hover {
+  background: var(--gold);
+}
+.contact-email-display:hover .email-icon,
+.contact-email-display:hover .email-text {
+  color: var(--navy-deep);
+}
+.contact-email-display:hover .email-icon { border-color: var(--navy-deep); }
+.email-icon {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 0.85rem;
+  transition: all 0.25s ease;
+}
+.email-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--cream);
+  transition: color 0.25s ease;
+}
+.contact-note {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-top: 1.5rem;
+  font-style: normal;
+}
+
+/* ============================================================
    FOOTER
    ============================================================ */
 footer {
@@ -632,7 +713,7 @@ footer {
       <li><a href="#about">About</a></li>
       <li><a href="#locations">Locations</a></li>
       <li><a href="https://www.linkedin.com/in/tuff-yen-0ab64b10b/" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a href="#join">Get Involved</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -798,11 +879,10 @@ footer {
 
 
 <!-- =====================================================
-     [EDIT-CONTACT] Bottom CTA
-     - The mailto link is the address that receives
-       "bring a seminar to your city" inquiries.
-     - Change "miltonangelgroup/#interest" to point to a
-       different in-city form if needed.
+     [EDIT-CONTACT] Bottom CTA + Contact
+     - The CTA section drives people to the Milton interest form
+     - The Contact section displays the email prominently with a
+       clear "Contact Us" treatment and mailto link
      ===================================================== -->
 <section class="cta-section" id="join">
   <div class="container">
@@ -815,8 +895,22 @@ footer {
     <p>Free, educational sessions for individuals interested in private market investing. No fund, no products, no sales pitch.</p>
     <div class="cta-group">
       <a href="miltonangelgroup/#interest" class="cta primary">Join the Milton Group</a>
-      <a href="mailto:info@tuffyen.com" class="cta">Bring a Seminar to Your City</a>
+      <a href="#contact" class="cta">Bring a Seminar to Your City</a>
     </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="section-kicker"><span style="flex:0">Contact</span></div>
+    <h2>Get in touch</h2>
+    <p>For questions about an existing group, interest in bringing a seminar to your city, or general inquiries.</p>
+    <a href="mailto:info@tuffyen.com" class="contact-email-display">
+      <span class="email-icon">&#9993;</span>
+      <span class="email-text">info@tuffyen.com</span>
+    </a>
+    <div class="contact-note">We typically respond within one business day.</div>
   </div>
 </section>
 
@@ -831,6 +925,7 @@ footer {
     <div>
       <div class="footer-brand">Tuff Yen</div>
       <div class="footer-tag">Founder &amp; CEO, Seraph Group</div>
+      <a href="mailto:info@tuffyen.com" style="display:inline-block; margin-top:0.8rem; font-family:var(--font-sans); font-size:0.85rem; color:var(--gold); letter-spacing:0.02em; text-decoration:none;">info@tuffyen.com</a>
     </div>
     <div class="footer-disclaimer">
       For educational purposes only. This is not a solicitation to invest in any fund or security. No investment advice is being provided. All investments involve risk, including the potential loss of principal.
