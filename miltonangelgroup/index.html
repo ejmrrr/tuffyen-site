@@ -828,147 +828,6 @@ body {
   .event-details { padding: 2.5rem 2rem; }
 }
 
-/* ===== EVENT OPTIONS (two-card layout) ===== */
-.event-subhead {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.35rem;
-  font-weight: 400;
-  color: rgba(255,255,255,0.85);
-  margin-top: 0.5rem;
-  max-width: 640px;
-  line-height: 1.5;
-}
-
-.event-options {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-top: 3rem;
-}
-
-.event-option {
-  background: rgba(20, 34, 74, 0.45);
-  border: 1px solid rgba(201, 169, 97, 0.3);
-  padding: 2.4rem 2.2rem;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.3s ease;
-}
-
-.event-option:hover {
-  background: rgba(20, 34, 74, 0.7);
-  border-color: rgba(201, 169, 97, 0.5);
-  transform: translateY(-3px);
-}
-
-.event-option::before,
-.event-option::after {
-  content: '';
-  position: absolute;
-  width: 2.2rem;
-  height: 2.2rem;
-}
-
-.event-option::before {
-  top: 0; left: 0;
-  border-top: 1px solid var(--gold);
-  border-left: 1px solid var(--gold);
-}
-
-.event-option::after {
-  bottom: 0; right: 0;
-  border-bottom: 1px solid var(--gold);
-  border-right: 1px solid var(--gold);
-}
-
-.event-option-format {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1.8rem;
-}
-
-.event-option-format svg {
-  flex-shrink: 0;
-}
-
-.event-option-date {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--white);
-  line-height: 1.05;
-  margin-bottom: 0.5rem;
-}
-
-.event-option-time {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 500;
-  color: rgba(255,255,255,0.85);
-  margin-bottom: 1.5rem;
-}
-
-.event-option-divider {
-  height: 1px;
-  background: rgba(245, 239, 226, 0.12);
-  margin: 0.3rem 0 1.2rem;
-}
-
-.event-option-location-label {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 0.5rem;
-}
-
-.event-option-location {
-  font-family: var(--font-body);
-  font-size: 0.97rem;
-  font-weight: 500;
-  color: var(--white);
-  line-height: 1.4;
-  margin-bottom: 0.5rem;
-}
-
-.event-option-detail {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 300;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.5;
-  font-style: italic;
-}
-
-.event-option-cta {
-  margin-top: auto;
-  padding-top: 1.8rem;
-}
-
-.event-option-cta .btn-primary {
-  width: 100%;
-  text-align: center;
-  border-color: var(--gold);
-  color: var(--gold);
-}
-
-@media (max-width: 760px) {
-  .event-options { grid-template-columns: 1fr; }
-  .event-option { padding: 2rem 1.6rem; }
-}
-
 /* ===== FORM SECTION ===== */
 .form-section {
   background: var(--cream);
@@ -1025,6 +884,34 @@ body {
   font-weight: 300;
 }
 
+/* Select dropdown styled to match the underline-style inputs */
+select.form-input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%23c9a961' stroke-width='1.5'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  padding-right: 28px;
+  color: #AAA;
+  font-weight: 300;
+}
+
+select.form-input.has-value {
+  color: var(--navy);
+}
+
+select.form-input option {
+  color: var(--navy);
+  background: #FFF;
+  font-weight: 400;
+}
+
+select.form-input option[disabled] {
+  color: #AAA;
+}
+
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1053,82 +940,6 @@ body {
   line-height: 1.5;
   color: var(--text-muted);
   cursor: pointer;
-}
-
-/* Session selector */
-.session-group {
-  margin-bottom: 1.6rem;
-}
-
-.session-options {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.7rem;
-  margin-top: 0.5rem;
-}
-
-.session-option {
-  position: relative;
-  cursor: pointer;
-}
-
-.session-option input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.session-option-card {
-  display: block;
-  padding: 1rem 0.9rem;
-  border: 1px solid #d8d4c8;
-  background: #fafafa;
-  transition: all 0.2s ease;
-  text-align: center;
-  border-radius: 2px;
-}
-
-.session-option input[type="radio"]:checked + .session-option-card {
-  border-color: var(--gold);
-  background: var(--cream);
-  box-shadow: inset 0 0 0 1px var(--gold);
-}
-
-.session-option:hover .session-option-card {
-  border-color: var(--gold);
-}
-
-.session-option-label {
-  font-family: var(--font-body);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 0.35rem;
-  display: block;
-}
-
-.session-option-date {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--navy);
-  line-height: 1.2;
-  display: block;
-}
-
-.session-option-sub {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: var(--text-muted);
-  margin-top: 0.2rem;
-  display: block;
-}
-
-@media (max-width: 540px) {
-  .session-options { grid-template-columns: 1fr; }
 }
 
 .btn-submit {
@@ -1361,7 +1172,7 @@ body {
       $200M+ Invested Across 180+ Startups
     </div>
     <div class="hero-cta">
-      <a href="#event" class="btn-primary"><span>Upcoming Seminars &mdash; July 21 &amp; 22</span></a>
+      <a href="#event" class="btn-primary"><span>Upcoming Seminar &mdash; July 21</span></a>
     </div>
   </div>
   <div class="scroll-indicator"><span></span></div>
@@ -1373,44 +1184,45 @@ body {
     <div class="section-label">Upcoming Seminar</div>
     <h2 class="section-heading">Our next free introductory seminar</h2>
     <div class="gold-rule"></div>
-    <p class="event-subhead">Same content, same speaker. Choose the format that works best for you.</p>
 
-    <div class="event-options">
-
-      <!-- IN-PERSON CARD -->
-      <div class="event-option">
-        <div class="event-option-format">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          In-Person
-        </div>
-        <div class="event-option-date">Tuesday, July 21</div>
-        <div class="event-option-time">5:30 &ndash; 7:30 PM &middot; Doors at 5:00 PM</div>
-        <div class="event-option-divider"></div>
-        <div class="event-option-location-label">Venue</div>
-        <div class="event-option-location">Milton Branch Library</div>
-        <div class="event-option-detail">855 Mayfield Road, Milton, GA 30009. Free admission, open seating.</div>
-        <div class="event-option-cta">
-          <a href="#interest" class="btn-primary" onclick="document.getElementById('sessionInPerson').checked=true;"><span>Reserve Your Place</span></a>
-        </div>
-      </div>
-
-      <!-- VIRTUAL CARD -->
-      <div class="event-option">
-        <div class="event-option-format">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="18" x2="12" y2="21"/></svg>
-          Virtual
-        </div>
-        <div class="event-option-date">Wednesday, July 22</div>
-        <div class="event-option-time">5:30 &ndash; 7:30 PM &middot; Eastern Time</div>
-        <div class="event-option-divider"></div>
-        <div class="event-option-location-label">Access</div>
-        <div class="event-option-location">Online via Zoom</div>
-        <div class="event-option-detail">Secure join link emailed to registrants the day before the event.</div>
-        <div class="event-option-cta">
-          <a href="#interest" class="btn-primary" onclick="document.getElementById('sessionVirtual').checked=true;"><span>Reserve Your Place</span></a>
+    <div class="event-card">
+      <div class="event-details">
+        <div class="event-tag">Free &amp; Open to the Public</div>
+        <div class="event-title">How professional investors build wealth in technology startups</div>
+        <ul class="event-meta-list">
+          <li>
+            <span class="event-meta-label">Speaker</span>
+            <span class="event-meta-value">Tuff Yen, founder of Seraph Group</span>
+          </li>
+          <li>
+            <span class="event-meta-label">Venue</span>
+            <span class="event-meta-value">Milton Branch Library<br>855 Mayfield Road, Milton, GA 30009</span>
+          </li>
+          <li>
+            <span class="event-meta-label">Format</span>
+            <span class="event-meta-value">In-person presentation followed by audience Q&amp;A</span>
+          </li>
+          <li>
+            <span class="event-meta-label">Admission</span>
+            <span class="event-meta-value">Free. Registration encouraged &mdash; space is limited.</span>
+          </li>
+        </ul>
+        <div class="event-cta">
+          <a href="#interest" class="btn-primary" style="border-color: var(--gold); color: var(--gold);"><span>Reserve Your Place</span></a>
         </div>
       </div>
 
+      <div class="event-aside">
+        <div class="event-aside-date">
+          <span class="month">July</span>
+          <span class="day">21</span>
+          <span class="year">2026 &middot; Tuesday</span>
+        </div>
+        <div class="event-aside-time">
+          <div class="time">5:30 – 7:30 PM</div>
+          <div class="doors">Doors open at 5:00 PM</div>
+        </div>
+      </div>
     </div>
 
     <!-- Required Fulton County Library System non-endorsement statement.
@@ -1521,34 +1333,12 @@ body {
     <h2 class="section-heading">Join the Milton Angel Group</h2>
     <div class="gold-rule"></div>
     <div class="section-body">
-      <p>If you are interested in learning how to invest in technology startups from a career venture capitalist, fill out the form below. We'll confirm your place at your chosen session and keep you informed about future opportunities.</p>
+      <p>If you are interested in learning how to invest in technology startups from a career venture capitalist, fill out the form below. We'll confirm your place at the July 21 seminar and keep you informed about future opportunities.</p>
       <p style="margin-top:1rem; font-size:0.95rem; color:var(--text-muted);">Prefer to reach out directly? Email us at <a href="mailto:info@tuffyen.com" style="color:var(--gold); text-decoration:none; font-weight:500;">info@tuffyen.com</a>.</p>
     </div>
 
     <div class="form-container">
       <form id="interestForm" action="https://formspree.io/f/mdaprkpq" method="POST">
-
-        <div class="form-group session-group">
-          <label class="form-label">Which session would you like to attend?</label>
-          <div class="session-options">
-            <label class="session-option">
-              <input type="radio" id="sessionInPerson" name="session" value="In-Person (July 21, Milton Branch Library)" required>
-              <div class="session-option-card">
-                <span class="session-option-label">In-Person</span>
-                <span class="session-option-date">July 21</span>
-                <span class="session-option-sub">at the Library</span>
-              </div>
-            </label>
-            <label class="session-option">
-              <input type="radio" id="sessionVirtual" name="session" value="Virtual (July 22, Zoom)">
-              <div class="session-option-card">
-                <span class="session-option-label">Virtual</span>
-                <span class="session-option-date">July 22</span>
-                <span class="session-option-sub">via Zoom</span>
-              </div>
-            </label>
-          </div>
-        </div>
 
         <div class="form-row">
           <div class="form-group">
@@ -1571,6 +1361,18 @@ body {
         <div class="form-group">
           <label class="form-label" for="background">Professional Background <span style="color:#AAA; text-transform:none; letter-spacing:0; font-weight:300;">(optional)</span></label>
           <input class="form-input" type="text" id="background" name="background" placeholder="e.g. CEO, Physician, Attorney, Engineer...">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="referral">How Did You Hear About Us?</label>
+          <select class="form-input" id="referral" name="referral" required onchange="this.classList.toggle('has-value', this.value !== '')">
+            <option value="" disabled selected>Select an option</option>
+            <option value="Facebook or Instagram">Facebook or Instagram</option>
+            <option value="Nextdoor">Nextdoor</option>
+            <option value="Postcard in the mail">Postcard in the mail</option>
+            <option value="Word of mouth">Word of mouth</option>
+            <option value="Other">Other</option>
+          </select>
         </div>
 
         <button type="submit" class="btn-submit">Submit</button>
