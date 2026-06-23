@@ -378,6 +378,13 @@ body {
 @media (max-width:920px){ .form-grid{ grid-template-columns:1fr; gap:2rem; } }
 .form-aside-note { font-size: 0.95rem; line-height: 1.7; font-weight: 300; color: var(--muted); margin-top: 1.5rem; }
 .form-aside-note a { color: var(--gold-deep); text-decoration: none; font-weight: 500; }
+.form-radios { display: flex; flex-direction: column; gap: 0.65rem; margin-top: 0.35rem; }
+.form-radios .radio { display: flex; align-items: flex-start; gap: 0.7rem; cursor: pointer; font-size: 0.95rem; font-weight: 300; color: var(--ink-soft); line-height: 1.4; }
+.form-radios input { appearance: none; -webkit-appearance: none; width: 18px; height: 18px; margin: 0; flex-shrink: 0; position: relative; top: 2px; border: 1px solid rgba(0,0,0,0.28); border-radius: 50%; cursor: pointer; transition: border-color 0.2s; }
+.form-radios input:checked { border-color: var(--gold-deep); }
+.form-radios input:checked::after { content: ''; position: absolute; inset: 3px; border-radius: 50%; background: var(--gold-deep); }
+.form-radios input:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.form-radios .radio:hover input { border-color: var(--gold-deep); }
 .form-notice { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.8rem; font-weight: 500; color: var(--navy); background: rgba(201,169,97,0.12); border: 1px solid rgba(201,169,97,0.3); padding: 0.7rem 1.1rem; margin-top: 2rem; }
 .notice-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold-deep); flex-shrink: 0; }
 
@@ -848,7 +855,7 @@ select.form-input option { color: var(--navy); background: #fff; }
     <div class="form-grid">
       <div class="reveal reveal-d1">
         <p class="lead">Complete the form to reserve your seat at our free introductory seminar — and to register your interest in the Milton Angel Group.</p>
-        <p class="form-aside-note">We'll confirm your spot and keep you informed about the group and future opportunities. Prefer to reach out directly? Email <a href="mailto:info@tuffyen.com">info@tuffyen.com</a>.</p>
+        <p class="form-aside-note"><strong style="color:var(--navy); font-weight:600;">Can't make July 21?</strong> Fill out the form anyway &mdash; tell us you're interested in the group and we'll keep you posted on future sessions. Prefer to reach out directly? Email <a href="mailto:info@tuffyen.com">info@tuffyen.com</a>.</p>
         <div class="form-notice">
           <span class="notice-dot" aria-hidden="true"></span>
           Space is limited — registration is encouraged.
@@ -870,6 +877,14 @@ select.form-input option { color: var(--navy); background: #fff; }
           <div class="form-group">
             <label class="form-label" for="email">Email Address</label>
             <input class="form-input" type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Will you attend the July 21 seminar?</label>
+            <div class="form-radios">
+              <label class="radio"><input type="radio" name="attendance" value="Attending the July 21 seminar" required><span>Yes &mdash; I plan to attend on July 21</span></label>
+              <label class="radio"><input type="radio" name="attendance" value="Cannot attend July 21 - interested in the group"><span>I can't attend July 21, but I'm interested in the group</span></label>
+              <label class="radio"><input type="radio" name="attendance" value="Interested in the group / future sessions"><span>I'm interested in the group &amp; future sessions</span></label>
+            </div>
           </div>
           <div class="form-group">
             <label class="form-label" for="phone">Phone Number <span class="opt">(optional)</span></label>
