@@ -509,6 +509,10 @@ select.form-input option { color: var(--navy); background: #fff; }
 </head>
 <body>
 
+<!-- Postcard QR target: tuffyen.com/miltonangelgroup/#event lands here, at the top of the page.
+     (The event details section now uses id="event-details".) -->
+<span id="event" aria-hidden="true"></span>
+
 <div class="scroll-spine" aria-hidden="true"><div class="scroll-spine-fill"></div></div>
 
 <!-- RIBBON -->
@@ -522,7 +526,7 @@ select.form-input option { color: var(--navy); background: #fff; }
 <nav class="nav" id="nav" aria-label="Site navigation">
   <a href="#" class="nav-logo">Milton Angel Group</a>
   <div class="nav-links" id="navLinks">
-    <a href="#event">Seminar</a>
+    <a href="#event-details">Seminar</a>
     <a href="#agenda">Agenda</a>
     <a href="#about">The Group</a>
     <a href="#why">What You'll Learn</a>
@@ -565,14 +569,14 @@ select.form-input option { color: var(--navy); background: #fff; }
       </div>
       <div class="hero-actions">
         <a href="#interest" class="btn btn-gold"><span>Reserve Your Seat — Free</span></a>
-        <a href="#event" class="btn btn-outline"><span>Seminar Details</span></a>
+        <a href="#event-details" class="btn btn-outline"><span>Seminar Details</span></a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- SECTION 01 — SEMINAR -->
-<section class="section bg-navy" id="event">
+<section class="section bg-navy" id="event-details">
   <div class="wrap">
     <div class="s-head reveal">
       <div class="s-meta">
