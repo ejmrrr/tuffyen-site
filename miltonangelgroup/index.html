@@ -3,8 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Milton Angel Group — Learn How to Invest in Technology Startups</title>
-<meta name="description" content="Learn how to invest successfully in technology startups and build real wealth. The Milton Angel Group is forming in Milton, GA — led by Tuff Yen, a career venture capitalist.">
+<title>Milton Angel Group — A Private Angel Investing Group in Milton, GA</title>
+<meta name="description" content="A private group of accomplished individuals in Milton, Georgia who learn how early-stage technology investing works — then invest in it together. Led by Tuff Yen, a career venture capitalist. Membership is now open.">
+<meta property="og:title" content="Milton Angel Group — A Private Angel Investing Group in Milton, GA">
+<meta property="og:description" content="A private group of accomplished individuals in Milton, Georgia who learn how early-stage technology investing works — then invest in it together. Membership is now open.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tuffyen.com/miltonangelgroup/">
 <meta name="theme-color" content="#0a1428">
 <!-- TY monogram favicon (sapphire on navy) -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a1428'/%3E%3Ccircle cx='32' cy='32' r='27' fill='none' stroke='%235d93d8' stroke-width='2.5'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='26' fill='%235d93d8' text-anchor='middle'%3ETY%3C/text%3E%3C/svg%3E">
@@ -216,6 +220,38 @@ body {
   font-family: var(--serif); font-size: clamp(1.2rem, 2vw, 1.55rem);
   color: #fff; font-weight: 500; line-height: 1.35; margin-bottom: 0;
 }
+.hs-note {
+  font-family: var(--sans); font-size: 0.92rem; font-weight: 300;
+  color: rgba(255,255,255,0.6); line-height: 1.6; margin-top: 0.8rem;
+}
+/* Separate paid course program callout (on dark sections) */
+.course-note { margin-top: clamp(2.4rem, 4vw, 3.2rem); border: 1px solid rgba(201,169,97,0.3); background: rgba(201,169,97,0.05); padding: 1.7rem 1.9rem; }
+.course-tag { display: inline-block; font-family: var(--sans); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+.course-note h4 { font-family: var(--serif); font-size: clamp(1.3rem, 2.2vw, 1.6rem); font-weight: 600; color: #fff; margin-bottom: 0.5rem; }
+.course-note p { font-size: 0.98rem; line-height: 1.75; font-weight: 300; color: rgba(255,255,255,0.65); }
+.course-note a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(201,169,97,0.4); }
+.course-note a:hover { color: var(--gold-light); }
+.course-modules { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.45rem 1.8rem; margin: 1.4rem 0; }
+.course-modules div { font-size: 0.9rem; font-weight: 300; color: rgba(255,255,255,0.62); line-height: 1.6; }
+.course-modules i { font-style: normal; font-family: var(--serif); color: var(--gold); margin-right: 0.5rem; }
+.course-price { border-top: 1px solid rgba(201,169,97,0.25); padding-top: 1.1rem; font-size: 0.95rem; font-weight: 300; color: rgba(255,255,255,0.7); line-height: 1.7; }
+.course-price strong { color: #fff; font-weight: 600; }
+
+/* Membership: what's included + tiers (dark section) */
+.mem-block { margin-top: clamp(2.6rem, 4vw, 3.4rem); }
+.mem-sub { font-family: var(--sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.4rem; display: flex; align-items: center; gap: 1rem; }
+.mem-sub::after { content: ''; flex: 1; height: 1px; background: rgba(201,169,97,0.25); }
+.mem-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem 2.4rem; }
+.mem-item h4 { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: #fff; margin-bottom: 0.35rem; }
+.mem-item p { font-size: 0.95rem; line-height: 1.7; font-weight: 300; color: rgba(255,255,255,0.62); }
+.tier-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; margin-top: 1.4rem; }
+.tier { border: 1px solid rgba(201,169,97,0.3); background: rgba(201,169,97,0.05); padding: 1.6rem 1.7rem; }
+.tier-name { font-family: var(--sans); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+.tier-price { font-family: var(--serif); font-size: clamp(2rem, 3.4vw, 2.6rem); font-weight: 600; color: #fff; line-height: 1; margin-bottom: 0.7rem; }
+.tier-price span { font-family: var(--sans); font-size: 0.8rem; font-weight: 400; color: rgba(255,255,255,0.5); letter-spacing: 0.04em; }
+.tier p { font-size: 0.92rem; line-height: 1.65; font-weight: 300; color: rgba(255,255,255,0.62); }
+.mem-note { margin-top: 1.6rem; font-size: 0.86rem; line-height: 1.75; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.45); }
+@media (max-width: 700px) { .mem-grid, .tier-grid, .course-modules { grid-template-columns: 1fr; } }
 .hs-countdown {
   display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
   margin-top: 1.4rem; padding-top: 1.4rem; border-top: 1px solid rgba(201,169,97,0.2);
@@ -299,7 +335,7 @@ body {
 .date-plate::before { content:''; position:absolute; top:1rem; left:1rem; width:1.8rem; height:1.8rem; border-top:1px solid var(--gold); border-left:1px solid var(--gold); }
 .date-plate::after  { content:''; position:absolute; bottom:1rem; right:1rem; width:1.8rem; height:1.8rem; border-bottom:1px solid var(--gold); border-right:1px solid var(--gold); }
 .dp-month { font-size: 0.85rem; letter-spacing: 0.38em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.4rem; }
-.dp-day { font-family: var(--serif); font-size: clamp(5rem, 9vw, 7rem); font-weight: 600; line-height: 0.85; }
+.dp-day { font-family: var(--serif); font-size: clamp(3rem, 6vw, 4.4rem); font-weight: 600; line-height: 1.05; }
 .dp-year { font-size: 0.72rem; letter-spacing: 0.3em; color: rgba(255,255,255,0.4); margin-top: 0.7rem; }
 .dp-rule { width: 40px; height: 1px; background: rgba(201,169,97,0.3); margin: 1.8rem 0; }
 .dp-time { font-family: var(--serif); font-size: 1.75rem; color: var(--gold-light); font-weight: 500; }
@@ -526,12 +562,12 @@ select.form-input option { color: var(--navy); background: #fff; }
 <nav class="nav" id="nav" aria-label="Site navigation">
   <a href="#" class="nav-logo">Milton Angel Group</a>
   <div class="nav-links" id="navLinks">
-    <a href="#event-details">Seminar</a>
-    <a href="#agenda">Agenda</a>
+    <a href="#event-details">Membership</a>
+    <a href="#agenda">How It Works</a>
     <a href="#about">The Group</a>
     <a href="#why">What You'll Learn</a>
     <a href="#leadership">Your Host</a>
-    <a href="#interest" class="nav-reserve">Reserve a Seat</a>
+    <a href="#interest" class="nav-reserve">Request to Join</a>
   </div>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -551,25 +587,14 @@ select.form-input option { color: var(--navy); background: #fff; }
     <p class="hero-lead">A private group of accomplished individuals in Milton, Georgia who learn how early-stage technology investing works &mdash; then invest in it together.</p>
     <p class="hero-creds">Led by Tuff Yen &mdash; Yale MBA, former venture capitalist at JPMorgan and Hambrecht &amp; Quist.</p>
 
-    <!-- Upcoming-seminar callout: makes clear what the countdown and CTA are for -->
-    <div class="hero-seminar" aria-label="Upcoming seminar">
-      <div class="hs-label">Our First Introductory Seminar</div>
-      <div class="hs-detail">Tuesday, July 21, 2026 &middot; 5:30 PM<br>Milton Branch Library</div>
-      <div class="hs-countdown" id="countdown" role="timer" aria-label="Time remaining until the seminar">
-        <span class="hs-cd-prefix">Begins in</span>
-        <div class="cd-group">
-          <div class="cd-block"><div class="cd-num" id="cd-days">--</div><div class="cd-lbl">Days</div></div>
-          <span class="cd-colon" aria-hidden="true">:</span>
-          <div class="cd-block"><div class="cd-num" id="cd-hours">--</div><div class="cd-lbl">Hrs</div></div>
-          <span class="cd-colon" aria-hidden="true">:</span>
-          <div class="cd-block"><div class="cd-num" id="cd-mins">--</div><div class="cd-lbl">Min</div></div>
-          <span class="cd-colon" aria-hidden="true">:</span>
-          <div class="cd-block"><div class="cd-num" id="cd-secs">--</div><div class="cd-lbl">Sec</div></div>
-        </div>
-      </div>
+    <!-- Post-seminar: membership callout -->
+    <div class="hero-seminar" aria-label="Membership">
+      <div class="hs-label">Now Forming &mdash; Membership Open</div>
+      <div class="hs-detail">The group is now forming &mdash; founding members shape what it becomes.</div>
+      <div class="hs-note">Our first introductory seminar was held Tuesday, July 21, 2026 at the Milton Branch Library.</div>
       <div class="hero-actions">
-        <a href="#interest" class="btn btn-gold"><span>Reserve Your Seat — Free</span></a>
-        <a href="#event-details" class="btn btn-outline"><span>Seminar Details</span></a>
+        <a href="#interest" class="btn btn-gold"><span>Request to Join</span></a>
+        <a href="#agenda" class="btn btn-outline"><span>How It Works</span></a>
       </div>
     </div>
   </div>
@@ -581,54 +606,67 @@ select.form-input option { color: var(--navy); background: #fff; }
     <div class="s-head reveal">
       <div class="s-meta">
         <div class="s-num">01</div>
-        <div class="s-label" style="color:var(--gold);">The Seminar</div>
+        <div class="s-label" style="color:var(--gold);">Membership</div>
         <div class="s-rule"></div>
       </div>
-      <h2 class="s-title" style="color:#fff;">An evening on how professional investors build wealth in <em>technology startups</em></h2>
+      <h2 class="s-title" style="color:#fff;">A private circle learning to invest in <em>technology startups</em></h2>
     </div>
 
     <div class="seminar-body reveal reveal-d1">
       <div>
         <ul class="seminar-meta">
           <li>
-            <span class="sm-label" style="color:var(--gold);">Speaker</span>
-            <span class="sm-value" style="color:#fff;">Tuff Yen<small>Founder of Seraph Group</small></span>
+            <span class="sm-label" style="color:var(--gold);">Led by</span>
+            <span class="sm-value" style="color:#fff;">Tuff Yen<small>Founder of Seraph Group &middot; two decades in venture capital</small></span>
           </li>
           <li>
-            <span class="sm-label" style="color:var(--gold);">Venue</span>
-            <span class="sm-value" style="color:#fff;">Milton Branch Library<small>855 Mayfield Road, Milton, GA 30009</small></span>
+            <span class="sm-label" style="color:var(--gold);">Who it's for</span>
+            <span class="sm-value" style="color:#fff;">Accomplished individuals<small>Professionals, entrepreneurs, and executives in and around Milton, Georgia</small></span>
           </li>
           <li>
-            <span class="sm-label" style="color:var(--gold);">Format</span>
-            <span class="sm-value" style="color:#fff;">Presentation &amp; Q&amp;A<small>In-person, followed by open audience questions</small></span>
-          </li>
-          <li>
-            <span class="sm-label" style="color:var(--gold);">Admission</span>
-            <span class="sm-value" style="color:#fff;">Free of charge<small>Registration encouraged — space is limited</small></span>
+            <span class="sm-label" style="color:var(--gold);">Membership</span>
+            <span class="sm-value" style="color:#fff;">By request<small>Reviewed individually — no cost to express interest</small></span>
           </li>
         </ul>
         <div class="seminar-cta">
-          <a href="#interest" class="btn btn-gold"><span>Reserve Your Place</span></a>
+          <a href="#interest" class="btn btn-gold"><span>Request to Join</span></a>
         </div>
       </div>
 
-      <div class="date-plate" aria-label="Date and time">
-        <div class="dp-month">July</div>
-        <div class="dp-day">21</div>
-        <div class="dp-year">2026 &middot; Tuesday</div>
+      <div class="date-plate" aria-label="Membership status">
+        <div class="dp-month">Membership</div>
+        <div class="dp-day">Open</div>
+        <div class="dp-year">Milton, Georgia</div>
         <div class="dp-rule" aria-hidden="true"></div>
-        <div class="dp-time">5:30 – 7:00 PM</div>
-        <div class="dp-doors">Doors open at 5:00 PM</div>
+        <div class="dp-time">Request to join</div>
+        <div class="dp-doors">Reviewed individually</div>
       </div>
     </div>
 
-    <!--
-      Required: Fulton County Library System non-endorsement statement.
-      Must appear on all event announcements. Do not remove.
-    -->
-    <p class="disclaimer reveal">
-      This program content is neither sponsored, nor endorsed, nor approved by the Fulton County Library System or Fulton County Government.
-    </p>
+    <!-- What membership includes + tiers (from the seminar deck) -->
+    <div class="mem-block reveal">
+      <div class="mem-sub">What membership includes</div>
+      <div class="mem-grid">
+        <div class="mem-item">
+          <h4>National deal flow</h4>
+          <p>Three to five vetted opportunities a year, sourced through Tuff Yen's nationwide network &mdash; not just Milton.</p>
+        </div>
+        <div class="mem-item">
+          <h4>Financial return</h4>
+          <p>A diversified portfolio of early-stage companies, built for asymmetric, long-term upside.</p>
+        </div>
+        <div class="mem-item">
+          <h4>Community</h4>
+          <p>Invest alongside experienced investors, operators, and founders who take this seriously.</p>
+        </div>
+        <div class="mem-item">
+          <h4>Tax-deductible dues</h4>
+          <p>Dues support the Seraph Research Foundation, a 501(c)(3) nonprofit, and may be deductible. Consult your tax advisor.</p>
+        </div>
+      </div>
+
+      <p class="mem-note">Education is open to everyone. Investing through the group is limited to accredited investors, as defined by the SEC &mdash; generally $200,000+ in annual income ($300,000+ jointly) in each of the last two years, or $1,000,000+ in net worth excluding your primary residence.</p>
+    </div>
   </div>
 </section>
 
@@ -638,55 +676,48 @@ select.form-input option { color: var(--navy); background: #fff; }
     <div class="s-head reveal">
       <div class="s-meta">
         <div class="s-num">02</div>
-        <div class="s-label">The Evening</div>
+        <div class="s-label">How It Works</div>
         <div class="s-rule"></div>
       </div>
       <div>
-        <h2 class="s-title">What to expect on <em>July 21</em></h2>
-        <p class="lead" style="margin-top:1.4rem; max-width:560px;">An hour and a half designed to be educational, candid, and practical — here is how the evening unfolds.</p>
+        <h2 class="s-title">From first session to <em>first investment</em></h2>
+        <p class="lead" style="margin-top:1.4rem; max-width:560px;">The group runs on a simple rhythm: learn the craft, see real opportunities, and decide for yourself whether to invest.</p>
       </div>
     </div>
 
     <div class="agenda-list reveal reveal-d1">
       <div class="agenda-row">
-        <div class="ag-time">5:00 PM</div>
+        <div class="ag-time">Step 01</div>
         <div>
-          <div class="ag-title">Doors Open</div>
-          <div class="ag-desc">Arrive early, find your seat, and meet other attendees. Light networking before the program begins.</div>
+          <div class="ag-title">Request to Join</div>
+          <div class="ag-desc">Tell us a little about yourself using the form below. Every request is read personally.</div>
         </div>
       </div>
       <div class="agenda-row">
-        <div class="ag-time">5:30 PM</div>
+        <div class="ag-time">Step 02</div>
         <div>
-          <div class="ag-title">Welcome &amp; Introductions</div>
-          <div class="ag-desc">A brief overview of the Milton Angel Group, the evening's agenda, and the opportunity in early-stage investing.</div>
+          <div class="ag-title">Learn by Doing</div>
+          <div class="ag-desc">You learn the craft by taking part &mdash; sitting in on real pitches, watching diligence actually get run, and hearing why each decision gets made, alongside people who have done it before.</div>
         </div>
       </div>
       <div class="agenda-row">
-        <div class="ag-time">5:45 PM</div>
+        <div class="ag-time">Step 03</div>
         <div>
-          <div class="ag-title">Presentation — Building Wealth in Startups</div>
-          <div class="ag-desc">Tuff Yen walks through deal sourcing, due diligence, portfolio construction, and the real mathematics behind venture returns — drawn from two decades in the field.</div>
+          <div class="ag-title">See Real Deal Flow</div>
+          <div class="ag-desc">Members see the same kinds of early-stage opportunities institutional investors evaluate — with guidance on how to assess them.</div>
         </div>
       </div>
       <div class="agenda-row">
-        <div class="ag-time">6:30 PM</div>
+        <div class="ag-time">Step 04</div>
         <div>
-          <div class="ag-title">Audience Q&amp;A</div>
-          <div class="ag-desc">Open questions for Tuff Yen. Ask anything about startup investing, portfolio strategy, or how to begin as an angel investor.</div>
-        </div>
-      </div>
-      <div class="agenda-row">
-        <div class="ag-time">7:00 PM</div>
-        <div>
-          <div class="ag-title">Program Concludes</div>
-          <div class="ag-desc">Thank you for attending. Further questions are welcome one-on-one after the program ends.</div>
+          <div class="ag-title">Invest Together — If You Choose</div>
+          <div class="ag-desc">Members who wish to may invest alongside the group. Participation is always optional, and every decision is your own.</div>
         </div>
       </div>
     </div>
 
     <div style="margin-top:3rem;" class="reveal">
-      <a href="#interest" class="btn btn-navy"><span>Reserve Your Seat</span></a>
+      <a href="#interest" class="btn btn-navy"><span>Request to Join</span></a>
     </div>
   </div>
 </section>
@@ -705,39 +736,42 @@ select.form-input option { color: var(--navy); background: #fff; }
 
     <div class="about-grid">
       <div class="about-prose lead reveal reveal-d1">
-        <p>The Milton Angel Group is forming in Milton, Georgia — a private circle of accomplished individuals who learn how early-stage technology investing works, then invest in it together.</p>
-        <div class="pull-quote">It begins with education and grows into action — members who choose to can invest alongside the group, but the decision is always their own.</div>
-        <p>Led by Tuff Yen, a career venture capitalist, the group studies how professional investors source deals, conduct due diligence, structure investments, and build diversified portfolios — and puts that knowledge to work. The first gathering is a free educational seminar, with more to follow.</p>
+        <p>Angel investing rewards the people who see enough opportunities, do the homework, and stay diversified. Alone, that is close to impossible. Together, it is achievable.</p>
+        <div class="pull-quote">The goal isn't one lucky bet. It's a disciplined program that puts the power law to work over a decade.</div>
+        <p>Led by Tuff Yen, a career venture capitalist, the group works through real opportunities together — sourcing, diligence, structure, and portfolio decisions — so members learn the craft by practicing it. The group opened with a free introductory seminar in July 2026.</p>
       </div>
 
-      <div class="pillars reveal reveal-d2">
+      <div class="reveal reveal-d2">
+        <div class="s-label" style="margin:0 0 1.1rem;">Why a group, not alone</div>
+        <div class="pillars">
         <div class="pillar">
           <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
           <div>
-            <h4>Direct Access</h4>
-            <p>Learn from two decades of hands-on venture capital — not from a textbook.</p>
+            <h4>Access</h4>
+            <p>The best deals move inside trusted networks. A group's collective reach surfaces them.</p>
           </div>
         </div>
         <div class="pillar">
           <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
           <div>
-            <h4>Peer Network</h4>
-            <p>Connect with accomplished professionals and entrepreneurs in the Milton community.</p>
+            <h4>Bandwidth</h4>
+            <p>Real diligence takes 20+ hours a deal. Members divide the homework across the group.</p>
           </div>
         </div>
         <div class="pillar">
           <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
           <div>
-            <h4>Deal Flow Exposure</h4>
-            <p>See the same kinds of opportunities institutional investors evaluate — with guidance on how to assess them.</p>
+            <h4>Sample size</h4>
+            <p>Two or three checks isn't a portfolio. A group builds one wide enough to matter.</p>
           </div>
         </div>
         <div class="pillar">
           <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
           <div>
-            <h4>Structured Education</h4>
-            <p>A curriculum built on the real-world frameworks professional investors rely on.</p>
+            <h4>Selection</h4>
+            <p>Deals that find lone investors are often the ones professionals already passed on. Vetting is shared.</p>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -790,6 +824,28 @@ select.form-input option { color: var(--navy); background: #fff; }
       </div>
     </div>
 
+    <!-- The formal course program is separate from group membership -->
+    <div class="course-note reveal">
+      <span class="course-tag">Education &mdash; A Separate Program</span>
+      <h4>The course series</h4>
+      <p>Membership teaches by doing. For those who want to go further, an optional paid course series covers how venture capital works in practice &mdash; the financial and legal foundations, and the judgment to evaluate real opportunities. Offered through the <a href="https://seraphresearchfoundation.org" target="_blank" rel="noopener">Seraph Research Foundation</a>, independent of the group: membership is not required to enroll, and the courses are not included with membership.</p>
+
+      <div class="course-modules">
+        <div><i>01</i>Venture structure &amp; the law</div>
+        <div><i>02</i>How startups are built</div>
+        <div><i>03</i>Evaluating the opportunity</div>
+        <div><i>04</i>Terms &amp; cap tables</div>
+        <div><i>05</i>Reading the pitch</div>
+        <div><i>06</i>Due diligence</div>
+        <div><i>07</i>Exits &amp; returns</div>
+      </div>
+
+      <div class="course-price">
+        Seven modules, one to two hours each &mdash; take the full series or choose individual modules.<br>
+        Tuition and enrollment details are available on request; let us know on the form below.
+      </div>
+    </div>
+
     <!-- Power-law widget — makes "why diversify" visible -->
     <div class="powerlaw reveal">
       <div class="pl-kicker">The Power Law</div>
@@ -837,7 +893,7 @@ select.form-input option { color: var(--navy); background: #fff; }
           <p>His investor network spans individuals across cities in North America, Europe, and Asia — including Fortune 500 C-level executives, entrepreneurs, technologists, and investment professionals.</p>
         </div>
         <div style="margin-top:2.5rem;">
-          <a href="#interest" class="btn btn-ghost-navy"><span>Reserve Your Free Seat</span></a>
+          <a href="#interest" class="btn btn-ghost-navy"><span>Request to Join</span></a>
         </div>
       </div>
     </div>
@@ -850,24 +906,25 @@ select.form-input option { color: var(--navy); background: #fff; }
     <div class="s-head reveal">
       <div class="s-meta">
         <div class="s-num">06</div>
-        <div class="s-label">Reserve Your Seat</div>
+        <div class="s-label">Join the Group</div>
         <div class="s-rule"></div>
       </div>
-      <h2 class="s-title">Join us on <em>July 21</em></h2>
+      <h2 class="s-title">Request to <em>join the group</em></h2>
     </div>
 
     <div class="form-grid">
       <div class="reveal reveal-d1">
-        <p class="lead">Complete the form to reserve your seat at our free introductory seminar — and to register your interest in the Milton Angel Group.</p>
-        <p class="form-aside-note"><strong style="color:var(--navy); font-weight:600;">Can't make July 21?</strong> Fill out the form anyway &mdash; tell us you're interested in the group and we'll keep you posted on future sessions. Prefer to reach out directly? Email <a href="mailto:info@tuffyen.com">info@tuffyen.com</a>.</p>
+        <p class="lead">Complete the form to request membership in the Milton Angel Group.</p>
+        <p class="form-aside-note"><strong style="color:var(--navy); font-weight:600;">Attended the seminar?</strong> Welcome &mdash; let us know below and we'll follow up. New to the group? You're just as welcome. Prefer to reach out directly? Email <a href="mailto:info@tuffyen.com">info@tuffyen.com</a>.</p>
         <div class="form-notice">
           <span class="notice-dot" aria-hidden="true"></span>
-          Space is limited — registration is encouraged.
+          Membership is limited.
         </div>
       </div>
 
       <div class="reveal reveal-d2">
         <form id="interestForm" action="https://formspree.io/f/mdaprkpq" method="POST" novalidate>
+          <input type="hidden" name="group" value="Milton Angel Group">
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="firstName">First Name</label>
@@ -883,12 +940,12 @@ select.form-input option { color: var(--navy); background: #fff; }
             <input class="form-input" type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email">
           </div>
           <div class="form-group">
-            <label class="form-label">Will you attend the July 21 seminar?</label>
+            <label class="form-label">Your interest in the group</label>
             <div class="form-radios">
-              <label class="radio"><input type="radio" name="attendance" value="Attending the July 21 seminar" required><span>Yes &mdash; I plan to attend on July 21</span></label>
-              <label class="radio"><input type="radio" name="attendance" value="Cannot attend July 21 - interested in the group"><span>I can't attend July 21, but I'm interested in the group</span></label>
-              <label class="radio"><input type="radio" name="attendance" value="Interested in the group / future sessions"><span>I'm interested in the group &amp; future sessions</span></label>
+              <label class="radio"><input type="radio" name="interest" value="Wants to join the group" required><span>I'd like to join the Milton Angel Group</span></label>
+              <label class="radio"><input type="radio" name="interest" value="Interested in the educational sessions"><span>I'm interested in the educational sessions</span></label>
             </div>
+            <p style="font-size:0.82rem; line-height:1.6; color:var(--muted); font-weight:300; margin-top:0.8rem;">The educational sessions are a separate, paid program &mdash; not included with Milton Angel Group membership.</p>
           </div>
           <div class="form-group">
             <label class="form-label" for="phone">Phone Number <span class="opt">(optional)</span></label>
@@ -902,6 +959,7 @@ select.form-input option { color: var(--navy); background: #fff; }
             <label class="form-label" for="referral">How Did You Hear About Us?</label>
             <select class="form-input" id="referral" name="referral" required onchange="this.classList.toggle('filled', this.value !== '')">
               <option value="" disabled selected>Select an option</option>
+              <option value="Attended the July 21 seminar">I attended the July 21 seminar</option>
               <option value="Facebook or Instagram">Facebook or Instagram</option>
               <option value="Nextdoor">Nextdoor</option>
               <option value="Postcard in the mail">Postcard in the mail</option>
@@ -912,7 +970,7 @@ select.form-input option { color: var(--navy); background: #fff; }
             </select>
           </div>
 
-          <button type="submit" class="form-submit" id="submitBtn"><span id="submitLabel">Reserve My Seat</span></button>
+          <button type="submit" class="form-submit" id="submitBtn"><span id="submitLabel">Request to Join</span></button>
 
           <p class="form-privacy">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
@@ -924,8 +982,8 @@ select.form-input option { color: var(--navy); background: #fff; }
           <div class="success-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b08f48" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
-          <h3>You're registered</h3>
-          <p>Thank you for your interest in the Milton Angel Group. We've received your information and will be in touch to confirm your seat.<br>We look forward to seeing you on July 21.</p>
+          <h3>Request received</h3>
+          <p>Thank you for your interest in the Milton Angel Group. We've received your information and will be in touch shortly about membership and upcoming sessions.</p>
         </div>
       </div>
     </div>
@@ -957,7 +1015,7 @@ select.form-input option { color: var(--navy); background: #fff; }
       </svg>
     </div>
   </div>
-  <p class="footer-parent">Milton Angel Group is part of Tuff Yen's national seminar series. &nbsp;<a href="../">Visit tuffyen.com &rarr;</a></p>
+  <p class="footer-parent">Milton Angel Group is part of Tuff Yen's growing network of private angel groups. &nbsp;<a href="../">Visit tuffyen.com &rarr;</a></p>
   <div class="footer-logo">Milton Angel Group</div>
   <a href="mailto:info@tuffyen.com" class="footer-email">info@tuffyen.com</a>
   <p class="footer-disclaimer">This is not a solicitation to invest in any fund or security. No investment advice is being provided. All investments involve risk, including the potential loss of principal.<br><br>This program content is neither sponsored, nor endorsed, nor approved by the Fulton County Library System or Fulton County Government.</p>
@@ -966,32 +1024,16 @@ select.form-input option { color: var(--navy); background: #fff; }
 <!-- STICKY CTA -->
 <div class="sticky-cta" id="stickyCta" aria-hidden="true" role="complementary">
   <div class="sticky-text">
-    <strong>Milton Angel Group</strong> — Free seminar &nbsp;<span class="sticky-date">July 21, 5:30 PM</span> &nbsp;at Milton Branch Library
+    <strong>Milton Angel Group</strong> — Membership is now open in &nbsp;<span class="sticky-date">Milton, Georgia</span>
   </div>
   <div class="sticky-right">
-    <a href="#interest" class="btn btn-gold" style="padding:11px 26px; font-size:0.68rem;"><span>Reserve a Seat</span></a>
+    <a href="#interest" class="btn btn-gold" style="padding:11px 26px; font-size:0.68rem;"><span>Request to Join</span></a>
     <button class="sticky-close" id="stickyClose" aria-label="Dismiss">&times;</button>
   </div>
 </div>
 
 <script>
-/* Countdown */
-(function () {
-  const target = new Date('2026-07-21T17:30:00-04:00');
-  const d = document.getElementById('cd-days'), h = document.getElementById('cd-hours'),
-        m = document.getElementById('cd-mins'), s = document.getElementById('cd-secs');
-  const pad = n => String(Math.max(0, Math.floor(n))).padStart(2, '0');
-  function tick() {
-    const diff = target - Date.now();
-    if (diff <= 0) { [d,h,m,s].forEach(e => e.textContent = '00'); return; }
-    const t = diff / 1000;
-    d.textContent = pad(t / 86400);
-    h.textContent = pad((t % 86400) / 3600);
-    m.textContent = pad((t % 3600) / 60);
-    s.textContent = pad(t % 60);
-  }
-  tick(); setInterval(tick, 1000);
-})();
+/* (Seminar countdown removed — the page is now post-seminar / membership-focused.) */
 
 /* Sticky nav */
 (function () {
@@ -1052,9 +1094,9 @@ select.form-input option { color: var(--navy); background: #fff; }
     fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
     .then(res => {
       if (res.ok) { form.style.display = 'none'; success.style.display = 'block'; success.focus(); }
-      else { alert('Something went wrong. Please try again or email info@tuffyen.com directly.'); btn.disabled = false; label.textContent = 'Reserve My Seat'; }
+      else { alert('Something went wrong. Please try again or email info@tuffyen.com directly.'); btn.disabled = false; label.textContent = 'Request to Join'; }
     })
-    .catch(() => { alert('Something went wrong. Please try again or email info@tuffyen.com directly.'); btn.disabled = false; label.textContent = 'Reserve My Seat'; });
+    .catch(() => { alert('Something went wrong. Please try again or email info@tuffyen.com directly.'); btn.disabled = false; label.textContent = 'Request to Join'; });
   });
 })();
 
