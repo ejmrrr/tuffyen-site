@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Seraph Georgia//Founding Call//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:seraph-georgia-founding-call-20261006@tuffyen.com
+DTSTAMP:20260811T120000Z
+DTSTART:20261006T220000Z
+DTEND:20261006T230000Z
+SUMMARY:Seraph Georgia - Founding Call
+DESCRIPTION:A private Zoom briefing on how Seraph Georgia will invest.\nJoin Zoom: https://us02web.zoom.us/j/86962787342?pwd=gFWMeF83eC6lPIvbESyiSXxuSOikna.1\nMeeting ID: 869 6278 7342\nPasscode: 324010
+LOCATION:https://us02web.zoom.us/j/86962787342?pwd=gFWMeF83eC6lPIvbESyiSXxuSOikna.1
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Seraph Georgia - Founding Call
+END:VALARM
+END:VEVENT
+END:VCALENDAR
