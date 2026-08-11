@@ -32,6 +32,10 @@ h1{font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--royal);
   transition:all .3s cubic-bezier(.22,1,.36,1);position:relative;overflow:hidden;border:1px solid var(--royal)}
 .btn::before{content:'';position:absolute;inset:0 100% 0 0;background:var(--gold);transition:right .3s cubic-bezier(.22,1,.36,1)}
 .btn:hover::before{right:0}.btn:hover{color:var(--royal);border-color:var(--gold)}.btn span{position:relative;z-index:1}
+.cal-alts{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.35rem .9rem;margin:0 0 1.4rem}
+.cal-alts a{font-size:.8rem;font-weight:500;color:var(--gold-deep);text-decoration:none;letter-spacing:.01em;transition:color .2s}
+.cal-alts a:hover{color:var(--royal)}
+.cal-alts .sep{color:rgba(168,132,58,.45);font-size:.7rem}
 .zoom-lbl{display:block;text-align:left;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:.5rem}
 .copy{display:flex;gap:.5rem}
 .copy input{flex:1;min-width:0;padding:10px;border:1px solid rgba(10,31,68,.2);background:#fff;font-family:var(--sans);font-size:.82rem;color:var(--royal)}
@@ -52,6 +56,13 @@ h1{font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--royal);
       <div class="row"><span class="lbl">When</span><span class="val">Tue, Oct 6, 2026 &middot; 6:00 PM ET</span></div>
       <div class="row"><span class="lbl">Where</span><span class="val">Live on Zoom</span></div>
       <a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Seraph%20Georgia%20-%20Founding%20Call&amp;dates=20261006T220000Z%2F20261006T230000Z&amp;details=A%20private%20Zoom%20briefing%20on%20how%20Seraph%20Georgia%20will%20invest.%0AJoin%20Zoom%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F86962787342%3Fpwd%3DgFWMeF83eC6lPIvbESyiSXxuSOikna.1%0AMeeting%20ID%3A%20869%206278%207342%0APasscode%3A%20324010&amp;location=https%3A%2F%2Fus02web.zoom.us%2Fj%2F86962787342%3Fpwd%3DgFWMeF83eC6lPIvbESyiSXxuSOikna.1"><span>Add to Google Calendar</span></a>
+      <div class="cal-alts">
+        <a target="_blank" rel="noopener" href="https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=Seraph%20Georgia%20-%20Founding%20Call&amp;startdt=2026-10-06T22:00:00Z&amp;enddt=2026-10-06T23:00:00Z&amp;location=https%3A%2F%2Fus02web.zoom.us%2Fj%2F86962787342%3Fpwd%3DgFWMeF83eC6lPIvbESyiSXxuSOikna.1&amp;body=A%20private%20Zoom%20briefing%20on%20how%20Seraph%20Georgia%20will%20invest.%0AJoin%20Zoom%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F86962787342%3Fpwd%3DgFWMeF83eC6lPIvbESyiSXxuSOikna.1%0AMeeting%20ID%3A%20869%206278%207342%0APasscode%3A%20324010">Outlook.com</a>
+        <span class="sep">&middot;</span>
+        <a target="_blank" rel="noopener" href="https://outlook.office.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=Seraph%20Georgia%20-%20Founding%20Call&amp;startdt=2026-10-06T22:00:00Z&amp;enddt=2026-10-06T23:00:00Z&amp;location=https%3A%2F%2Fus02web.zoom.us%2Fj%2F86962787342%3Fpwd%3DgFWMeF83eC6lPIvbESyiSXxuSOikna.1&amp;body=A%20private%20Zoom%20briefing%20on%20how%20Seraph%20Georgia%20will%20invest.%0AJoin%20Zoom%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F86962787342%3Fpwd%3DgFWMeF83eC6lPIvbESyiSXxuSOikna.1%0AMeeting%20ID%3A%20869%206278%207342%0APasscode%3A%20324010">Microsoft 365</a>
+        <span class="sep">&middot;</span>
+        <a href="seraph-georgia-founding-call.ics" download>Apple / Download (.ics)</a>
+      </div>
       <span class="zoom-lbl">Zoom link</span>
       <div class="copy">
         <input id="zoomLink" readonly value="https://us02web.zoom.us/j/86962787342?pwd=gFWMeF83eC6lPIvbESyiSXxuSOikna.1" aria-label="Zoom link">
