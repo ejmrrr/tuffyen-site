@@ -230,6 +230,9 @@ body{font-family:var(--sans);color:var(--ink-soft);background:var(--ecru);-webki
 .finput{width:100%;padding:12px 0;border:none;border-bottom:1px solid rgba(10,31,68,.22);background:transparent;font-family:var(--sans);font-size:1rem;font-weight:300;color:var(--royal);outline:none;transition:border-color .28s;border-radius:0}
 .finput:focus{border-bottom-color:var(--gold-deep)}
 .finput::placeholder{color:#b3b0a6}
+textarea.finput{border:1px solid rgba(10,31,68,.2);background:rgba(255,255,255,.35);padding:.85rem .95rem;line-height:1.65;resize:vertical;min-height:118px}
+textarea.finput:focus{border-color:var(--gold-deep)}
+.fhelp{font-size:.82rem;font-weight:300;line-height:1.55;color:var(--muted);margin:-.15rem 0 .7rem}
 select.finput{appearance:none;-webkit-appearance:none;cursor:pointer;color:#8a8578;padding-right:26px;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23a8843a' stroke-width='1.5'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center}
 select.finput.filled{color:var(--royal)}
@@ -527,6 +530,11 @@ select.finput option{color:var(--royal)}
               <option>Johns Creek</option><option>Alpharetta</option><option>Milton</option>
               <option>Roswell</option><option>Other (Georgia)</option><option>Outside Georgia</option>
             </select></div>
+        </div>
+        <div class="fg">
+          <label class="flabel" for="about">A little about you</label>
+          <p class="fhelp">Tell us a bit about your background, and what draws you to Seraph Georgia and the founding call. A few sentences is plenty.</p>
+          <textarea class="finput" id="about" name="about_you" rows="4" placeholder="Your background, what you invest in or build, and why you&rsquo;d like a seat at the table&hellip;"></textarea>
         </div>
         <label class="accredit" for="accredited">
           <input type="checkbox" id="accredited" name="accredited_confirmation" value="Confirmed accredited investor" required>
