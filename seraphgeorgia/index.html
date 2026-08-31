@@ -397,6 +397,18 @@ select.finput option{color:var(--royal)}
 .mem-bar-r .tbd{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);font-family:var(--sans);font-weight:700;margin-left:.2rem}
 .mem-bar-r .per{font-size:.85rem;font-weight:300;color:rgba(255,255,255,.62)}
 .mem-local{max-width:820px;margin:2rem auto 0;text-align:center;font-size:1rem;font-weight:300;line-height:1.7;color:rgba(255,255,255,.7)}
+/* NETWORK: credential wall */
+.nw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(176,137,58,.3);border:1px solid rgba(176,137,58,.3);max-width:960px;margin:0 auto}
+.nw-item{background:var(--paper);padding:1.7rem 1.3rem;text-align:center;transition:background .25s;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:130px}
+.nw-item:hover{background:rgba(201,169,97,.14)}
+.nw-logo-wrap{height:38px;width:100%;display:flex;align-items:center;justify-content:center;margin-bottom:.75rem}
+.nw-logo{max-width:148px;max-height:38px;width:auto;height:auto;object-fit:contain;filter:grayscale(1) contrast(1.15) opacity(.72);transition:filter .3s}
+.nw-item:hover .nw-logo{filter:none;opacity:1}
+.nw-name{font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--royal);line-height:1.25;letter-spacing:.01em}
+.nw-role{font-family:var(--sans);font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin-top:.55rem}
+@media (max-width:820px){.nw-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:420px){.nw-grid{grid-template-columns:1fr}}
+.nw-note{max-width:640px;margin:2.2rem auto 0;text-align:center;font-size:.82rem;font-weight:300;font-style:italic;color:var(--muted);line-height:1.6}
 </style>
 </head>
 <body>
@@ -434,18 +446,18 @@ select.finput option{color:var(--royal)}
           <span class="cd-colon">:</span>
           <div class="cd-block"><span class="cd-num" data-s>00</span><span class="cd-lbl">Sec</span></div>
         </div>
-        <div class="hc-seats"><span class="seat-dot" aria-hidden="true"></span>Founding cohort &middot; <b>30 seats remaining</b></div>
+        <div class="hc-seats"><span class="seat-dot" aria-hidden="true"></span>Founding cohort &middot; <b>100 seats</b></div>
         <div class="hc-note">Can&rsquo;t attend live? Request a private 1:1.</div>
       </div>
     </div>
     <div class="hero-who">
       <div class="hw-title">Who we&rsquo;re looking for</div>
-      <p class="hw-lead">A community where <b>every member contributes</b>: sourcing deals, sharing the diligence, opening doors. Everyone gains from what the group builds together. We look for people who want to give as much as they gain:</p>
+      <p class="hw-lead">A community where members can contribute as much as they&rsquo;d like: referring deals, sharing the diligence, opening doors, advising entrepreneurs. It&rsquo;s never required, but the more everyone brings, the stronger the group becomes for all of us. Whether you want to get hands-on or simply invest quietly, we&rsquo;d love to have you:</p>
       <ul class="hw-list">
         <li><svg class="ck" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>An <b>accredited investor</b>, by the SEC&rsquo;s income or net-worth standard.</span></li>
-        <li><svg class="ck" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>Willing to commit a minimum of $30,000 a year</b> over the next five years.</span></li>
+        <li><svg class="ck" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>Willing to invest a minimum of $30,000 a year</b> over the next five years.</span></li>
         <li><svg class="ck" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>A genuine interest in building wealth through <b>startup equity</b>.</span></li>
-        <li><svg class="ck" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Willing to <b>contribute</b> your knowledge, connections, and guidance.</span></li>
+        <li><svg class="ck" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Open to <b>contributing</b> your knowledge, connections, or guidance &mdash; always welcome, never required.</span></li>
       </ul>
       <a href="#register" class="btn btn-navy lg"><span>If this sounds like you, apply</span></a>
     </div>
@@ -490,6 +502,30 @@ select.finput option{color:var(--royal)}
   </div>
 </section>
 
+<!-- THE NETWORK -->
+<section class="section" id="network">
+  <div class="wrap">
+    <div class="s-eyebrow reveal">The Network</div>
+    <h2 class="s-title reveal">The kind of people you&rsquo;ll be <em>alongside</em></h2>
+    <p class="s-intro reveal">Direct&rsquo;s 500+ members and advisors bring careers built at firms like these &mdash; the judgment, relationships, and pattern recognition that make the group&rsquo;s diligence sharper than any one investor working alone.</p>
+    <div class="nw-grid reveal">
+      <div class="nw-item"><div class="nw-logo-wrap"><img class="nw-logo" src="logos/homedepot.svg" alt="The Home Depot" loading="lazy"></div><div class="nw-role">CEO</div></div>
+      <div class="nw-item"><div class="nw-logo-wrap"><img class="nw-logo" src="logos/visa.svg" alt="Visa" loading="lazy"></div><div class="nw-role">President / CEO</div></div>
+      <div class="nw-item"><div class="nw-logo-wrap"><img class="nw-logo" src="logos/pfizer.svg" alt="Pfizer" loading="lazy"></div><div class="nw-role">President</div></div>
+      <div class="nw-item"><div class="nw-logo-wrap"><img class="nw-logo" src="logos/google.svg" alt="Google" loading="lazy"></div><div class="nw-role">Technical Lead</div></div>
+      <div class="nw-item"><div class="nw-logo-wrap"><img class="nw-logo" src="logos/goldmansachs.svg" alt="Goldman Sachs" loading="lazy"></div><div class="nw-role">Technology</div></div>
+      <div class="nw-item"><div class="nw-logo-wrap"><img class="nw-logo" src="logos/mckinsey.svg" alt="McKinsey &amp; Company" loading="lazy"></div><div class="nw-role">Partner</div></div>
+      <div class="nw-item"><div class="nw-logo-wrap"><img class="nw-logo" src="logos/cnn.svg" alt="CNN" loading="lazy"></div><div class="nw-role">Co-Founder</div></div>
+      <div class="nw-item"><div class="nw-logo-wrap"><img class="nw-logo" src="logos/schwab.svg" alt="Charles Schwab" loading="lazy"></div><div class="nw-role">Vice Chairman</div></div>
+      <div class="nw-item"><div class="nw-logo-wrap"><img class="nw-logo" src="logos/gehealthcare.svg" alt="GE Healthcare" loading="lazy"></div><div class="nw-role">CEO</div></div>
+      <div class="nw-item"><div class="nw-logo-wrap"><img class="nw-logo" src="logos/cocacola.svg" alt="Coca-Cola" loading="lazy"></div><div class="nw-role">CIO</div></div>
+      <div class="nw-item"><div class="nw-name">Merrill Lynch</div><div class="nw-role">CEO, VC Group</div></div>
+      <div class="nw-item"><div class="nw-logo-wrap"><img class="nw-logo" src="logos/humana.svg" alt="Humana" loading="lazy"></div><div class="nw-role">CEO</div></div>
+    </div>
+    <p class="nw-note reveal">Titles reflect roles our members and network have held over the course of their careers &mdash; not necessarily their current position.</p>
+  </div>
+</section>
+
 <!-- YOUR HOST -->
 <section class="section" id="host">
   <div class="wrap">
@@ -525,7 +561,7 @@ select.finput option{color:var(--royal)}
     <h2 class="s-title reveal" style="margin-bottom:2.2rem">Apply to join Direct Georgia</h2>
     <div class="form-card reveal">
       <div class="top">
-        <p style="font-size:1rem;font-weight:300;color:var(--ink-soft);line-height:1.7">Whether your background is high tech, science, engineering, professional services, or the C-suite, you&rsquo;re welcome here. Share a little about yourself and we&rsquo;ll send you the details for the founding call. The call is open to accredited investors, and it is where the community takes shape. The founding cohort itself is limited, and by invitation.</p>
+        <p style="font-size:1rem;font-weight:300;color:var(--ink-soft);line-height:1.7">Whether your background is high tech, science, engineering, professional services, small business ownership, or the C-suite, you&rsquo;re welcome here. Share a little about yourself and we&rsquo;ll send you the details for the founding call. The call is open to accredited investors only.</p>
       </div>
       <form id="regForm" action="https://formspree.io/f/mzepenvr" method="POST" novalidate>
         <input type="hidden" name="group" value="Direct Georgia">
@@ -550,7 +586,7 @@ select.finput option{color:var(--royal)}
         </div>
         <div class="fg">
           <label class="flabel" for="about">A little about you</label>
-          <p class="fhelp">Share your background and what draws you to Direct Georgia. What might you bring to the community, and what are you hoping to gain? A few sentences is plenty.</p>
+          <p class="fhelp">Share your background and what draws you to Direct Georgia. What might you bring to the community, and what are you hoping to gain? A few sentences is plenty. A LinkedIn link is welcome.</p>
           <textarea class="finput" id="about" name="about_you" rows="4" placeholder="Your background, what you invest in or build, how you might contribute, and why you&rsquo;d like a seat at the table&hellip;"></textarea>
         </div>
         <label class="accredit" for="accredited">
